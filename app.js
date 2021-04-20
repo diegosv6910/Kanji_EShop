@@ -13,6 +13,17 @@ app.use(bodyParser.json());
 
 //Configuramos express para que lea los archivos staticos de la carpeta public. (HTML, CSS, Scripts JS)
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/lib'));
+
+//Configuracion MySQL
+var sqlDetails = require('./controllers/mysql')
+var mysql = require('mysql')
+con = mysql.createConnection(sqlDetails);
+con.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+con.end();
 
 // Agregamos el código de nuestro router (routes/index.js)
 app.use('/v1', require('./routes'));
