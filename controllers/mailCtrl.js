@@ -31,7 +31,7 @@ exports.sendEmail = function (req, res, dataForm) {
     });
 
     //Configure the HTML MAIL Template
-    readHTMLFile(__dirname + '../public/register.html', function (err, html) {
+    readHTMLFile(__dirname + '/register.html', function (err, html) {
         var template = handlebars.compile(html);
         var replacements = {
             username: dataForm[0]
