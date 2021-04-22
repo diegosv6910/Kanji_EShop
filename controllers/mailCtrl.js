@@ -15,8 +15,8 @@ exports.sendEmail = function(req, res, dataForm){
     var mailOptions = {
         from: process.env.EMAILWHOSEND,
         to: dataForm[2],
-        subject: 'Test API SENDMAIL',
-        text: "Estimado "+ dataForm[0] + " " + dataForm[1] + ". /n Tu Registro Fue Exitoso. Tu correo de ingreso es: "+ dataForm[2] + ". /n "   
+        subject: 'Register',
+        text: "Estimado "+ dataForm[0] + " " + dataForm[1] + ". Tu Registro Fue Exitoso. Tu correo de ingreso es: "+ dataForm[2] + ". "   
     };
     
     // Enviamos el email
