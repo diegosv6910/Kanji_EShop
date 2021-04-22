@@ -16,6 +16,7 @@ function guardarUsuario(req, res) {
             con.query(QueryRegister, function (error) {
                 if (error) throw error
             })
+            sendEmail.sendMail();
             con.end();
         }
     })
