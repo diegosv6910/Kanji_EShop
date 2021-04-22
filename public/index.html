@@ -23,7 +23,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="onloadBack()">
         <!-- Top bar Start -->
         <div class="top-bar">
             <div class="container-fluid">
@@ -334,7 +334,7 @@
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#"><p id="product-title-1">Product Name</p></a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -502,9 +502,9 @@
                 </div>
                 <div class="row align-items-center product-slider product-slider-4">
                     <div class="col-lg-3">
-                        <div class="product-item">
+                        <div class="product-item1">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#" class="productName1">Product Name</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -802,6 +802,7 @@
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
         
         <!-- JavaScript Libraries -->
+        <script src="/public/js/backendIndex.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="/easing/easing.min.js"></script>
