@@ -7,17 +7,15 @@ var mysql = require('mysql')
 function guardarUsuario(req, res) {
     var con = mysql.createConnection(sqlDetails);
             let dataForm = [req.body.Name, req.body.last_Name, req.body.Mail, req.body.Phone, req.body.password2]
-            console.log("aqui estoy");
-            sendEmail.sendEmail(req, res, dataForm[2])
-            console.log("llegue aqui")
             res.redirect('/v1')
-            // var QueryRegister = "INSERT INTO `"+ process.env.BDNAME +"`.`usuarios` (`nameUser`, `lastnameUser`, `mailUser`, `phoneUser`, `password`) VALUES ('" + dataForm[0] + "', '" + dataForm[1] + "', '" + dataForm[2] + "', '" + dataForm[3] + "', '" + dataForm[4] + "'); "
-            // con = mysql.createConnection(sqlDetails);
-            // con.query(QueryRegister, function (error) {
-            //     if (error) throw error
-            // })
+            var QueryRegister = "INSERT INTO `"+ process.env.BDNAME +"`.`usuarios` (`nameUser`, `lastnameUser`, `mailUser`, `phoneUser`, `password`) VALUES ('" + dataForm[0] + "', '" + dataForm[1] + "', '" + dataForm[2] + "', '" + dataForm[3] + "', '" + dataForm[4] + "'); "
+            con = mysql.createConnection(sqlDetails);
+            con.query(QueryRegister, function (error) {
+                if (error) throw error
+                else sendEmail.sendEmail(req, res, dataForm)
+            })
             
-            // con.end();
+            con.end();
 }
 
 function checkMailRepeat(mail) {
