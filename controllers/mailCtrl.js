@@ -11,7 +11,7 @@ exports.sendEmail = function(req, res, mail){
         });
     // Definimos el email
     var mailOptions = {
-        from: process.env.EMAILSEND,
+        from: process.env.EMAILWHOSEND,
         to: mail,
         subject: 'Test API SENDMAIL',
         text: 'Favor de responder de recibido.'
