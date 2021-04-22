@@ -4,8 +4,6 @@ exports.sendEmail = function(req, res, mail){
     // Definimos el transporter
         var transporter = nodemailer.createTransport({
             service: 'smtp.titan.email',
-            ssl: true,
-            port: 465,
             auth: {
                 user: process.env.EMAILSEND,
                 pass: process.env.PASSWORDMAIL
