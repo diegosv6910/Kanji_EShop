@@ -1,4 +1,4 @@
 function onloadBack() {
-    var itemTitle = document.getElementById("product-title-1")
-    itemTitle.innerHTML("Hola Mundo")
+    var itemTitle = document.getElementById("titleItem")
+    itemTitle.innerHTML = "Hola"
 }
