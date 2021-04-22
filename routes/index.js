@@ -14,8 +14,7 @@ const {
 
 // definimos el comportamiento en la raíz del endpoint
 router.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname, "../public/index.html"))
-  onloadBack
+  onloadBack(res)
 });
 
 router.use('/usuario', require('./usuarios'));

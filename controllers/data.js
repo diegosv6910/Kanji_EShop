@@ -2,7 +2,7 @@ var sqlDetails = require('./mysql')
 var mysql = require('mysql')
 
 
-function onloadBack() {
+function onloadBack(res) {
 
     var con = mysql.createConnection(sqlDetails)
     con.query("SELECT * FROM `"+ process.env.BDNAME +"`.`productos`", function (err, result, fields) {
@@ -22,7 +22,7 @@ function onloadBack() {
     productItems.push(arrayItems)
 
     console.log(productItems)
-
+    res.sendFile(path.join(__dirname, "../public/index.html"))
 }
 
 module.exports = {
