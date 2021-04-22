@@ -1,6 +1,8 @@
 var nodemailer = require('nodemailer'); // email sender function
 var handlebars = require('handlebars');
 var fs = require('fs-extra');
+const app = express();
+app.use(express.static(__dirname + '/public'));
 
 var readHTMLFile = function (path, callback) {
     fs.readFile(path, { encoding: 'utf-8' }, function (err, html) {
