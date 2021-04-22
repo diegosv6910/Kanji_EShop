@@ -5,21 +5,36 @@ var sqlDetails = require('./mysql')
 var mysql = require('mysql')
 
 function guardarUsuario(req, res) {
-    //Comprobar match passwords
-    // res.sendFile(path.join(__dirname, "../public/product-list.html"))
-    let dataForm = [req.body.Name, req.body.last_Name, req.body.Mail, req.body.Phone, req.body.password2]
-    varQueryRegister = "INSERT INTO `bciw0ve1qvovsg6tfx0c`.`usuarios` (`nameUser`, `lastnameUser`, `mailUser`, `phoneUser`, `password`) VALUES ('"+ dataForm[0] +"', '"+ dataForm[1] +"', '"+ dataForm[2] +"', '"+ dataForm[3] +"', '"+ dataForm[4] +"'); "
     var con = mysql.createConnection(sqlDetails);
-    con.query(varQueryRegister, function(error){
-        if (error) throw error
+    var querySelectMail = "SELECT FROM `"+ process.env.BDNAME +"`.`usuarios` where `mailUser` = '" + req.body.Mail + "'"
+    con.query(querySelectMail, function (error, result) {
+        if (error) res.redirect('/v1')
+        if (result == 0) {
+            let dataForm = [req.body.Name, req.body.last_Name, req.body.Mail, req.body.Phone, req.body.password2]
+            var QueryRegister = "INSERT INTO `"+ process.env.BDNAME +"`.`usuarios` (`nameUser`, `lastnameUser`, `mailUser`, `phoneUser`, `password`) VALUES ('" + dataForm[0] + "', '" + dataForm[1] + "', '" + dataForm[2] + "', '" + dataForm[3] + "', '" + dataForm[4] + "'); "
+            con = mysql.createConnection(sqlDetails);
+            con.query(QueryRegister, function (error) {
+                if (error) throw error
+            })
+            con.end();
+        }
     })
-    // sendEmail.sendEmail(req, res, req.body.Mail);
-    res.redirect('/v1')
-    // res.sendFile(path.join(__dirname, "../public/index.html"))
+}
+
+function checkMailRepeat(mail) {
+    var checkMail = 0;
+    var con = mysql.createConnection(sqlDetails);
+    var querySelectMail = "SELECT FROM `bciw0ve1qvovsg6tfx0c`.`usuarios` where `mailUser` = '" + mail + "'"
+    con.query(querySelectMail, function (error, result) {
+        if (error) throw error
+        if (result === 1) checkMail = 1
+        return checkMail
+    })
 }
 
 
 
 module.exports = {
     guardarUsuario,
+    checkMailRepeat
 }

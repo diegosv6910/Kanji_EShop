@@ -5,13 +5,13 @@ exports.sendEmail = function(req, res, mail){
         var transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'diegosv6910@gmail.com',
-                pass: 'uijv1kow'
+                user: process.env.EMAILSEND,
+                pass: process.env.PASSWORDMAIL
             }
         });
     // Definimos el email
     var mailOptions = {
-        from: 'diegosv6910@gmail.com',
+        from: process.env.EMAILSEND,
         to: mail,
         subject: 'Test API SENDMAIL',
         text: 'Favor de responder de recibido.'

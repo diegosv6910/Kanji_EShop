@@ -1,9 +1,9 @@
 var mysql      = require('mysql');
 var connection = {
-  host     : 'bciw0ve1qvovsg6tfx0c-mysql.services.clever-cloud.com',
-  user     : 'unfalqzdimz2a7qo',
-  password : 'tCQRkxFgquDQyl1TPyrS',
-  database : 'bciw0ve1qvovsg6tfx0c'
+  host     : process.env.HOST,
+  user     : process.env.BDUSER,
+  password : process.env.BDPASSWORD,
+  database : process.env.BDNAME
 };
  
 // connection.connect();
