@@ -7,9 +7,14 @@ const path = require('path');
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/lib'));
 
+const {
+  onloadBack
+} = require("../controllers/data")
+
+
 // definimos el comportamiento en la raíz del endpoint
 router.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname, "../public/index.html"))
+  onloadBack(res)
 });
 
 router.use('/usuario', require('./usuarios'));

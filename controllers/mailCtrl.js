@@ -1,21 +1,24 @@
 var nodemailer = require('nodemailer'); // email sender function
 
-exports.sendEmail = function(req, res, mail){
+exports.sendEmail = function(req, res, dataForm){
     // Definimos el transporter
         var transporter = nodemailer.createTransport({
-            service: 'Gmail',
+            host: 'smtp.titan.email',
+            port: 465,
+            secure: true,
             auth: {
-                user: 'diegosv6910@gmail.com',
-                pass: 'uijv1kow'
+                user: process.env.EMAILSEND,
+                pass: process.env.PASSWORDMAIL
             }
         });
     // Definimos el email
     var mailOptions = {
-        from: 'diegosv6910@gmail.com',
-        to: mail,
-        subject: 'Test API SENDMAIL',
-        text: 'Favor de responder de recibido.'
+        from: process.env.EMAILWHOSEND,
+        to: dataForm[2],
+        subject: 'Register',
+        text: "Estimado "+ dataForm[0] + " " + dataForm[1] + ". Tu Registro Fue Exitoso. Tu correo de ingreso es: "+ dataForm[2] + ". "   
     };
+    
     // Enviamos el email
     transporter.sendMail(mailOptions, function(error, info){
         if (error){
