@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 //Configuramos express para que lea los archivos staticos de la carpeta public. (HTML, CSS, Scripts JS)
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/lib'));
+app.set('views', path.join(__dirname, '/public/views'));
+app.set('view engine', 'ejs');
 
 //Configuracion MySQL
 var sqlDetails = require('./controllers/mysql')
@@ -38,5 +40,5 @@ app.use(function(req, res, next) {
 // Iniciando el servidor...
 var server = app.listen(process.env.PORT || 3000, function(){
   var port = server.address().port;
-  console.log('Escuchando en el puerto ' + port);
+  console.log('Escuchando en el puerto ' + server.address().port);
 });

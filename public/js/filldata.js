@@ -1,6 +1,5 @@
-const arrayData = require('../../controllers/data')
-
-function changeRecent() {
-    alert("Hola Mundo Llegue a Filldata")
-    var arrayForFill = arrayData.onloadBack(res);
+function changeRecent(text) {
+    alert(text)
+    // var arrayForFill = arrayData.onloadBack(res);
+    // console.log(arrayForFill[0][0].idProducto)
 }
