@@ -176,10 +176,10 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="cart-page-inner">
-                        <% var index=0, length=arrayData[0].length %>
+                        <% var index=0, length=arrayData[0].length, sum = 0 %>
                         <% for (index; index < length; index++){ %>
-                        <% var sum = 0 + Number(arrayData[0][0].precioProducto) + Number(arrayData[0][1].precioProducto) + Number(arrayData[0][2].precioProducto)%>
-
+                        <% sum = sum + Number(arrayData[0][index].precioProducto)%>
+                        <% } %>
 
                         <div class="row">
                             <div class="col-md-12">
@@ -203,7 +203,6 @@
                                 </div>
                             </div>
                         </div>
-                        <% } %>
                     </div>
                 </div>
             </div>
