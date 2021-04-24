@@ -8,7 +8,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/lib'));
 
 const {
-  onloadBack
+  onloadBack,
+  onloadBackCart
 } = require("../controllers/data")
 
 
@@ -16,6 +17,11 @@ const {
 router.get('/', (req, res)=>{
   onloadBack(res)
 });
+
+router.get('/cart', (req, res)=>{
+  onloadBackCart(res)
+});
+
 
 router.use('/usuario', require('./usuarios'));
 

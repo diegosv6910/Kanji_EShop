@@ -19,7 +19,24 @@ function onloadBack(res) {
     // res.render(path.join(__dirname, "../public/index.ejs"))
 }
 
+function onloadBackCart(res) {
+    var productItems = [
+
+    ]
+    var con = mysql.createConnection(sqlDetails)
+    con.query("SELECT * FROM `" + process.env.BDNAME + "`.`productos`", function (err, result, fields) {
+        if (err) throw err
+        productItems.push(result)
+        con.end();
+        res.render('cart', { arrayData: productItems })
+        console.log("Hpla Mundo Desde CART")
+    });
+
+    // change.changeRecent("Hola desde Module");
+    // res.render(path.join(__dirname, "../public/index.ejs"))
+}
+
 module.exports = {
     onloadBack,
-    query
+    onloadBackCart
 }
