@@ -18,7 +18,7 @@ function guardarUsuario(req, res) {
                     console.log('Aqui estoy en register')
                 }
             })
-            res.render('index')
+            res.redirect('/')
             con.end();
 }
 

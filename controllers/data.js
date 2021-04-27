@@ -34,5 +34,5 @@ function onloadLogin(res) {
 module.exports = {
     onloadBack,
     onloadBackCart,
-    onloadLogin
+    onloadLogin,
 }
