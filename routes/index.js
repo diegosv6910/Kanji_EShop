@@ -9,7 +9,8 @@ app.use(express.static(__dirname + '/lib'));
 
 const {
   onloadBack,
-  onloadBackCart
+  onloadBackCart,
+  onloadLogin
 } = require("../controllers/data")
 
 
@@ -21,6 +22,10 @@ router.get('/', (req, res)=>{
 router.get('/cart', (req, res)=>{
   onloadBackCart(res)
 });
+
+router.get('/login', (req, res) =>{
+  onloadLogin(res)
+})
 
 
 router.use('/usuario', require('./usuarios'));

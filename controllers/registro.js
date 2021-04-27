@@ -9,14 +9,16 @@ function guardarUsuario(req, res) {
     var con = mysql.createConnection(sqlDetails);
             let dataForm = [req.body.Name, req.body.last_Name, req.body.Mail, req.body.Phone, req.body.password2]
             var pwdEncrypt = CryptoJS.AES.encrypt(dataForm[4], process.env.SECRET_KEY).toString();
-            res.redirect('/v1')
             var QueryRegister = "INSERT INTO `"+ process.env.BDNAME +"`.`usuarios` (`nameUser`, `lastnameUser`, `mailUser`, `phoneUser`, `password`) VALUES ('" + dataForm[0] + "', '" + dataForm[1] + "', '" + dataForm[2] + "', '" + dataForm[3] + "', '" + pwdEncrypt + "'); "
             con = mysql.createConnection(sqlDetails);
             con.query(QueryRegister, function (error) {
                 if (error) throw error
-                else sendEmail.sendEmail(req, res, dataForm)
+                else{
+                    sendEmail.sendEmail(req, res, dataForm)
+                    console.log('Aqui estoy en register')
+                }
             })
-            
+            res.render('index')
             con.end();
 }
 

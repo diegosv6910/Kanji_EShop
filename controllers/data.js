@@ -1,7 +1,5 @@
 var sqlDetails = require('./mysql')
 var mysql = require('mysql')
-var change = require('../public/js/filldata');
-const { query } = require('express');
 
 function onloadBack(res) {
     var productItems = [
@@ -14,9 +12,6 @@ function onloadBack(res) {
         con.end();
         res.render('index', { arrayData: productItems })
     });
-
-    // change.changeRecent("Hola desde Module");
-    // res.render(path.join(__dirname, "../public/index.ejs"))
 }
 
 function onloadBackCart(res) {
@@ -29,14 +24,15 @@ function onloadBackCart(res) {
         productItems.push(result)
         con.end();
         res.render('cart', { arrayData: productItems })
-        console.log("Hpla Mundo Desde CART")
     });
+}
 
-    // change.changeRecent("Hola desde Module");
-    // res.render(path.join(__dirname, "../public/index.ejs"))
+function onloadLogin(res) {
+    res.render('login')
 }
 
 module.exports = {
     onloadBack,
-    onloadBackCart
+    onloadBackCart,
+    onloadLogin
 }
