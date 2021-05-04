@@ -9,7 +9,7 @@
     <meta content="eCommerce HTML Template Free Download" name="description">
 
     <!-- Favicon -->
-    <link href="/public//img/favicon.ico" rel="icon">
+    <link href="/public/img/favicon.ico" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
@@ -18,8 +18,8 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/slick/slick.css" rel="stylesheet">
-    <link href="lib/slick/slick-theme.css" rel="stylesheet">
+    <link href="/slick/slick.css" rel="stylesheet">
+    <link href="/slick/slick-theme.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
@@ -153,19 +153,30 @@
                                             <tr>
                                                 <td>
                                                     <div class="img">
-                                                        <a href="#"><img src="/<%= arrayData[0][index].rutaImg %>" alt="Image"></a>
-                                                        <p><%= arrayData[0][index].nombreProducto %></p>
+                                                        <a href="#"><img src="/<%= arrayData[0][index].rutaImg %>"
+                                                                alt="Image"></a>
+                                                        <p>
+                                                            <%= arrayData[0][index].nombreProducto %>
+                                                        </p>
                                                     </div>
                                                 </td>
-                                                <td>$<%= arrayData[0][index].precioProducto %></td>
+                                                <td class="price">$<%= arrayData[0][index].precioProducto %>
+                                                </td>
                                                 <td>
                                                     <div class="qty">
                                                         <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                        <input type="text" value="1">
+                                                        <input class="numberProducts" type="text" value="1">
                                                         <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </td>
-                                                <td>$<%= arrayData[0][index].precioProducto %></td>
+                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+                                                    $(document).ready(function () {
+                                                            alert("Hola Mundo");
+                                                    });
+                                                </script>
+                                                <td class="totalPrice">
+                                                    <%= arrayData[0][index].precioProducto %>
+                                                </td>
                                                 <td><button><i class="fa fa-trash"></i></button></td>
                                             </tr>
                                             <% } %>
@@ -176,33 +187,37 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="cart-page-inner">
-                        <% var index=0, length=arrayData[0].length, sum = 0 %>
-                        <% for (index; index < length; index++){ %>
-                        <% sum = sum + Number(arrayData[0][index].precioProducto)%>
-                        <% } %>
+                        <% var index=0, length=arrayData[0].length, sum=0 %>
+                            <% for (index; index < length; index++){ %>
+                                <% sum=sum + Number(arrayData[0][index].precioProducto)%>
+                                    <% } %>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="coupon">
-                                    <input type="text" placeholder="Coupon Code">
-                                    <button>Apply</button>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="cart-summary">
-                                    <div class="cart-content">
-                                        <h1>Cart Summary</h1>
-                                        <p>Sub Total<span><%= sum %></span></p>
-                                        <p>Shipping Cost<span>$0</span></p>
-                                        <h2>Grand Total<span><%= sum %></span></h2>
-                                    </div>
-                                    <div class="cart-btn">
-                                        <button>Update Cart</button>
-                                        <button>Checkout</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="coupon">
+                                                    <input type="text" placeholder="Coupon Code">
+                                                    <button>Apply</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="cart-summary">
+                                                    <div class="cart-content">
+                                                        <h1>Cart Summary</h1>
+                                                        <p>Sub Total<span>
+                                                                <%= sum %>
+                                                            </span></p>
+                                                        <p>Shipping Cost<span>$0</span></p>
+                                                        <h2>Grand Total<span>
+                                                                <%= sum %>
+                                                            </span></h2>
+                                                    </div>
+                                                    <div class="cart-btn">
+                                                        <button>Update Cart</button>
+                                                        <button>Checkout</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                     </div>
                 </div>
             </div>
@@ -297,8 +312,8 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="/lib/easing/easing.min.js"></script>
-    <script src="/lib/slick/slick.min.js"></script>
+    <script src="/easing/easing.min.js"></script>
+    <script src="/slick/slick.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>

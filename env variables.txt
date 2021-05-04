@@ -1,0 +1,8 @@
+$env:BDNAME='bciw0ve1qvovsg6tfx0c'
+$env:BDPASSWORD='tCQRkxFgquDQyl1TPyrS'
+$env:BDUSER='unfalqzdimz2a7qo'
+$env:EMAILSEND='kanjiadmin@diegosanva.tech'
+$env:EMAILWHOSEND='kanjiadmin@diegosanva.tech'
+$env:HOST='bciw0ve1qvovsg6tfx0c-mysql.services.clever-cloud.com'
+$env:PASSWORDMAIL='uijb1kow'
+$env:SECRET_KEY='paulina'

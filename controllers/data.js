@@ -31,8 +31,17 @@ function onloadLogin(res) {
     res.render('login')
 }
 
+function onloadLogin(res) {
+    res.render('login')
+}
+
+function onloadCheckout(res) {
+    res.render('checkout')
+}
+
 module.exports = {
     onloadBack,
     onloadBackCart,
     onloadLogin,
+    onloadCheckout
 }
