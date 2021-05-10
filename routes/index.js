@@ -14,6 +14,10 @@ const {
   onloadCheckout
 } = require("../controllers/data")
 
+const{
+  Checkout
+} = require("../controllers/stripe")
+
 
 // definimos el comportamiento en la raíz del endpoint
 router.get('/', (req, res)=>{
@@ -32,8 +36,9 @@ router.get('/checkout', (req, res) =>{
   onloadCheckout(res)
 })
 
-
 router.use('/usuario', require('./usuarios'));
+
+router.use('/stripe', require('./stripe'));
 
 // exportamos nuestro nuevo route
 module.exports = router;
