@@ -26,10 +26,12 @@
 </head>
 
 <body>
-    <% var array=[] %>
-        <% console.log("test") %>
-            <% array.push('1' ) %>
-                <% console.log(array) %>
+    <% var arrayNames=[
+        {
+            id: 1,
+            name: "diego"
+        }
+    ] %>
                     <!-- Top bar Start -->
                     <div class="top-bar">
                         <div class="container-fluid">
@@ -209,7 +211,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="coupon">
                                                                     <input type="text" placeholder="Coupon Code">
-                                                                    <button>Apply</button>
+                                                                    <button><%= arrayNames[0].id %></button>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12">
@@ -337,7 +339,7 @@
 
 <script type="text/javascript">
     // Create an instance of the Stripe object with your publishable API key
-    var stripe = Stripe("pk_test_51Ip2MdKMd0SUlMVWN1yez3bvhXSxygP6Ct6ICAvDglqGN1DRJHNxsxhUe8u6MYL8wC95S3X7xRlSAtMumQh0ojC200x20oTY5H");
+    var stripe = Stripe("pk_live_51Ip2MdKMd0SUlMVWVM4yf3YRsEKS37RdVGOC47SyyXbAgSTBy3zQul7TCJhTF5P2uHiqOr9sHtm1mbietgxQeya400Y4Mi0etj");
     var checkoutButton = document.getElementById("checkout-button");
     var productName = document.getElementById("product-name").innerText;
     var productPrice = document.getElementById("productPrice").innerText;

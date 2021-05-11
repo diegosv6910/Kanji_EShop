@@ -1,4 +1,4 @@
-const stripe = require('stripe')('sk_test_51Ip2MdKMd0SUlMVWNu1NPsVROqaT0goyyj2YA4avdxcLFgfGKi2z5wj1orMIG3ktkZ5mvy74K90oiZjZNdjBkUBr00Gzhjjntt');
+const stripe = require('stripe')(process.env.keyStripe);
 const express = require('express');
 const app = express();
 app.use(express.static('.'));
@@ -17,7 +17,7 @@ async function Checkout (req, res){
             name: req.body.name,
             images: ['https://i.ibb.co/52SV227/1.jpg'],
           },
-          unit_amount: 2000,
+          unit_amount: 1000,
         },
         quantity: 1,
       },
