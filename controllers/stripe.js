@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.keyStripe);
+const stripe = require('stripe')(process.env.KEYSTRIPE);
 const express = require('express');
 const app = express();
 app.use(express.static('.'));
