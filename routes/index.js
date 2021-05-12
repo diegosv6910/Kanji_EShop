@@ -11,7 +11,12 @@ const {
   onloadBack,
   onloadBackCart,
   onloadLogin,
-  onloadCheckout
+  onloadCheckout,
+  onloadContact,
+  onloadAccount,
+  onloadProductDetail,
+  onloadProductList,
+  onloadWishlist
 } = require("../controllers/data")
 
 const{
@@ -34,6 +39,21 @@ router.get('/login', (req, res) =>{
 
 router.get('/checkout', (req, res) =>{
   onloadCheckout(res)
+})
+router.get('/contact', (req, res) =>{
+  onloadContact(res)
+})
+router.get('/account', (req, res) =>{
+  onloadAccount(res)
+})
+router.get('/product-detail', (req, res) =>{
+  onloadProductDetail(res)
+})
+router.get('/product-list', (req, res) =>{
+  onloadProductList(res)
+})
+router.get('/wishlist', (req, res) =>{
+  onloadWishlist(res)
 })
 
 router.use('/usuario', require('./usuarios'));

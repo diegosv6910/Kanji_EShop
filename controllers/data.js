@@ -39,9 +39,34 @@ function onloadCheckout(res) {
     res.render('checkout')
 }
 
+function onloadContact(res){
+    res.render('contact')
+}
+
+function onloadAccount(res){
+    res.render('my-account')
+}
+
+function onloadProductDetail(res){
+    res.render('product-detail')
+}
+
+function onloadProductList(res){
+    res.render('product-list')
+}
+
+function onloadWishlist(res){
+    res.render('wishlist')
+}
+
 module.exports = {
     onloadBack,
     onloadBackCart,
     onloadLogin,
-    onloadCheckout
+    onloadCheckout,
+    onloadContact,
+    onloadAccount,
+    onloadProductDetail,
+    onloadProductList,
+    onloadWishlist
 }
