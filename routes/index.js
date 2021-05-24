@@ -46,9 +46,6 @@ router.get('/contact', (req, res) =>{
 router.get('/account', (req, res) =>{
   onloadAccount(res)
 })
-router.get('/product-detail', (req, res) =>{
-  onloadProductDetail(res)
-})
 router.get('/product-list', (req, res) =>{
   onloadProductList(res)
 })
@@ -59,6 +56,8 @@ router.get('/wishlist', (req, res) =>{
 router.use('/usuario', require('./usuarios'));
 
 router.use('/stripe', require('./stripe'));
+
+router.use('/product-detail', require('./productInfo'));
 
 // exportamos nuestro nuevo route
 module.exports = router;

@@ -156,7 +156,7 @@
                                                 </thead>
                                                 <tbody class="align-middle">
                                                     <% var index=0, length=arrayData[0].length %>
-                                                        <% for (index; index < length; index++){ %>
+                                                        <% for (index; index < 2; index++){ %>
                                                             <tr>
                                                                 <td>
                                                                     <div class="img">
@@ -176,19 +176,13 @@
                                                                         <button class="btn-minus"><i
                                                                                 class="fa fa-minus"></i></button>
                                                                         <input class="numberProducts" type="text"
-                                                                            value="1">
-                                                                        <button class="btn-plus"><i
+                                                                            value=1>
+                                                                        <button class="btn-plus"><i 
                                                                                 class="fa fa-plus"></i></button>
                                                                     </div>
                                                                 </td>
-                                                                <script
-                                                                    src="https://code.jquery.com/jquery-3.6.0.min.js">
-                                                                        $(document).ready(function () {
-                                                                            alert("Hola Mundo");
-                                                                        });
-                                                                    </script>
                                                                 <td id="productPrice" class="totalPrice">
-                                                                    <%= arrayData[0][index].precioProducto %>
+                                                                    $<%= arrayData[0][index].precioProducto %>
                                                                 </td>
                                                                 <td><button><i class="fa fa-trash"></i></button></td>
                                                             </tr>

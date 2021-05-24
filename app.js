@@ -8,7 +8,7 @@ var app = express();
 
 // Configuración de middlewares
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Configuramos express para que lea los archivos staticos de la carpeta public. (HTML, CSS, Scripts JS)
