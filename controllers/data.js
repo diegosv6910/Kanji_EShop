@@ -52,7 +52,16 @@ function onloadProductDetail(res){
 }
 
 function onloadProductList(res){
-    res.render('product-list')
+    var productItems = [
+
+    ]
+    var con = mysql.createConnection(sqlDetails)
+    con.query("SELECT * FROM `" + process.env.BDNAME + "`.`productos`", function (err, result, fields) {
+        if (err) throw err
+        productItems.push(result)
+        con.end();
+        res.render('product-list', { arrayData: productItems })
+    });
 }
 
 function onloadWishlist(res){

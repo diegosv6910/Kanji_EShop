@@ -156,24 +156,24 @@
                 <div class="col-md-6">
                     <div class="header-slider normal-slider">
                         <div class="header-slider-item">
-                            <img src="img/slider-1.png" alt="Slider Image" />
+                            <img src="<%= arrayData[0][18].rutaImg %>" alt="Slider Image" />
                             <div class="header-slider-caption">
-                                <p>Funko Pop! Deadpool Bailarina</p>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar ahora</a>
+                                <p> <%= arrayData[0][18].nombreProducto %></p>
+                                <a class="btn" href="/v1/product-detail/<%= arrayData[0][18].idProducto %>"><i class="fa fa-shopping-cart"></i>Comprar ahora</a>
                             </div>
                         </div>
                         <div class="header-slider-item">
-                            <img src="img/slider-2.jpg" alt="Slider Image" />
+                            <img src="<%= arrayData[0][19].rutaImg %>" alt="Slider Image" />
                             <div class="header-slider-caption">
-                                <p>Playera Black Panther</p>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar ahora</a>
+                                <p> <%= arrayData[0][19].nombreProducto %></p>
+                                <a class="btn" href="/v1/product-detail/<%= arrayData[0][19].idProducto %>"><i class="fa fa-shopping-cart"></i>Comprar ahora</a>
                             </div>
                         </div>
                         <div class="header-slider-item">
-                            <img src="img/slider-3.jpeg" alt="Slider Image" />
+                            <img src="<%= arrayData[0][20].rutaImg %>" alt="Slider Image" />
                             <div class="header-slider-caption">
-                                <p>Batman Zero Point 01</p>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar ahora</a>
+                                <p> <%= arrayData[0][20].nombreProducto %></p>
+                                <a class="btn" href="/v1/product-detail/<%= arrayData[0][20].idProducto %>"><i class="fa fa-shopping-cart"></i>Comprar ahora</a>
                             </div>
                         </div>
                     </div>
@@ -181,15 +181,15 @@
                 <div class="col-md-3">
                     <div class="header-img">
                         <div class="img-item">
-                            <img src="img/category-1.jpg" />
-                            <a class="img-text" href="">
-                                <p>Funko Pop! Wanda</p>
+                            <img src="<%= arrayData[0][17].rutaImg %>" />
+                            <a class="img-text" href="/v1/product-detail/<%= arrayData[0][17].idProducto %>">
+                                <p><%= arrayData[0][17].nombreProducto %></p>
                             </a>
                         </div>
                         <div class="img-item">
-                            <img src="img/category-2.jpg" />
-                            <a class="img-text" href="">
-                                <p>Taza Hogwards</p>
+                            <img src="<%= arrayData[0][16].rutaImg %>" />
+                            <a class="img-text" href="/v1/product-detail/<%= arrayData[0][16].idProducto %>">
+                                <p><%= arrayData[0][16].nombreProducto %></p>
                             </a>
                         </div>
                     </div>
@@ -286,7 +286,9 @@
                         <div class="col-lg-3">
                             <div class="product-item">
                                 <div class="product-title">
-                                    <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>"><%= arrayData[0][index].nombreProducto %></a>
+                                    <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>">
+                                        <%= arrayData[0][index].nombreProducto %>
+                                    </a>
                                     <div class="ratting">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -302,16 +304,19 @@
                                     <div class="product-action">
                                         <a href="#"><i class="fa fa-cart-plus"></i></a>
                                         <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>"><i class="fa fa-search"></i></a>
+                                        <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>"><i
+                                                class="fa fa-search"></i></a>
                                     </div>
                                 </div>
                                 <div class="product-price">
-                                    <h3><span>$</span><%= arrayData[0][index].precioProducto %></h3>
+                                    <h3><span>$</span>
+                                        <%= arrayData[0][index].precioProducto %>
+                                    </h3>
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                                 </div>
                             </div>
                         </div>
-                    <% } %>
+                        <% } %>
             </div>
         </div>
     </div>
