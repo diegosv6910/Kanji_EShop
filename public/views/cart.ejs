@@ -104,8 +104,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="search">
-                                        <input type="text" placeholder="Buscar">
-                                        <button><i class="fa fa-search"></i></button>
+                                        <input type="text" id="myText" value="Search">
+                                        <button type="button" id="search-button"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -203,7 +203,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="coupon">
                                                                     <input type="text" placeholder="Cupon">
-                                                                    <button><%= arrayNames[0].id %></button>
+                                                                    <button>Aplicar</button>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12">
@@ -219,7 +219,6 @@
                                                                             </span></h2>
                                                                     </div>
                                                                     <div class="cart-btn">
-                                                                        <button>Actualizar Carrito</button>
                                                                         <button type="button"
                                                                             id="checkout-button">Checkout</button>
                                                                     </div>
