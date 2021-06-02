@@ -153,6 +153,7 @@
                                                     <a href="#" class="dropdown-item">Nuevo</a>
                                                     <a href="#" class="dropdown-item">Popular</a>
                                                     <a href="#" class="dropdown-item">Mas Vendido</a>
+                                                    <a href="/v1/politicas" class="dropdown-item">Politicas</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -470,12 +471,9 @@
 </body>
 
 <script type="text/javascript">
-    console.log("aqui")
     var searchButton = document.getElementById("search-button");
-
     searchButton.addEventListener("click", function () {
         var x = document.getElementById("myText").value;
-        console.log(x)
         window.location = `/v1/product-detail/filterName/${x}`
     });
 </script>

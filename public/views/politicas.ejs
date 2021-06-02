@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KANJI MX - Mi Cuenta</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="eCommerce HTML Template Free Download" name="keywords">
+    <meta content="eCommerce HTML Template Free Download" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="/slick/slick.css" rel="stylesheet">
+    <link href="/slick/slick-theme.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i>
+                    kanjiadmin@diegosanva.tech
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i>
+                    777 130 6246
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="/v1" class="nav-item nav-link">Inicio</a>
+                        <a href="/v1/product-list" class="nav-item nav-link">Productos</a>
+                        <a href="/v1/product-detail" class="nav-item nav-link">Detalles del Producto</a>
+                        <a href="/v1/cart" class="nav-item nav-link">Carrito</a>
+                        <a href="/v1/checkout" class="nav-item nav-link">Checkout</a>
+                        <a href="/v1/account" class="nav-item nav-link">Mi Cuenta</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mas</a>
+                            <div class="dropdown-menu">
+                                <a href="/v1/wishlist" class="dropdown-item">Lista de Deseos</a>
+                                <a href="/v1/login" class="dropdown-item">Inicio de Sesion & Registro</a>
+                                <a href="/v1/contact" class="dropdown-item">Contactanos</a>
+                                <a href="/v1/politicas" class="dropdown-item">Politicas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta de Usuario</a>
+                            <div class="dropdown-menu">
+                                <a href="/v1/login" class="dropdown-item">Inicio de Sesion</a>
+                                <a href="/v1/login" class="dropdown-item">Registro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="/v1">
+                            <img src="/img/logo.png" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search">
+                        <input type="text" placeholder="Buscar">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="user">
+                        <a href="wishlist.html" class="btn wishlist">
+                            <i class="fa fa-heart"></i>
+                            <span>(0)</span>
+                        </a>
+                        <a href="cart.html" class="btn cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>(0)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/v1">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Productos</a></li>
+                <li class="breadcrumb-item active">Mi Cuenta</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- My Account Start -->
+    <div class="my-account">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="dashboard-nav" data-toggle="pill" href="#dashboard-tab"
+                            role="tab"><i class="fa fa-tachometer-alt"></i>FAQS</a>
+                        <a class="nav-link" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i
+                                class="fa fa-shopping-bag"></i>Logistica</a>
+                        <a class="nav-link" id="payment-nav" data-toggle="pill" href="#payment-tab" role="tab"><i
+                                class="fa fa-credit-card"></i>Metodo de Pago</a>
+                        <a class="nav-link" id="address-nav" data-toggle="pill" href="#address-tab" role="tab"><i
+                                class="fa fa-map-marker-alt"></i>Cookies</a>
+                        <a class="nav-link" id="account-nav" data-toggle="pill" href="#account-tab" role="tab"><i
+                                class="fa fa-user"></i>Terminos y Condiciones</a>
+                        <a class="nav-link" href="/v1"><i class="fa fa-sign-out-alt"></i>Cerrar Sesion</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="dashboard-tab" role="tabpanel"
+                            aria-labelledby="dashboard-nav">
+                            <h4>FAQS</h4>
+                            <H5>Sobre el Stock</H5>
+                            <p>
+                                ¿Qué sucede cuando los clientes hacen reservas y, a la vez, piden Funkos que hay en
+                                stock? Lo que hacemos, como primera medida, es separar y asignar los Funkos que hay en
+                                stock a dicho cliente; después, esperamos a que lleguen todos los Funkos que están
+                                reservados y, una vez se tienen todos, lo que hacemos es el envío total (nunca parcial,
+                                con primero stock y luego reservas, pues los precios ya están muy ajustados). Si el
+                                cliente desea que hagamos un envío parcial, podrá pagar un extra de 5 € para el envío
+                                del stock.
+                                Si hay algún Funko pop que demora en exceso la llegada por parte del distribuidor,
+                                contactaremos con el cliente para explicarle el caso y proponerle varias soluciones,
+                                desde seguir esperando hasta ofrecerle otro Funko. Además, en estos casos le ofreceremos
+                                un cupón descuento de cortesía.
+                            </p>
+                            <h5>Sobre las cancelaciones</h5>
+                            <p>
+                                ¿PUEDO CANCELAR MI PEDIDO?
+                                Sí, si el pedido no ha sido procesado o enviado (información extra en envíos y
+                                devoluciones).
+                                Si lo que quieres cancelar es una reserva, tendrás 7 días desde que has hecho el pedido
+                                para hacerlo, pues nosotros realizamos todas las reservas bajo demanda de pedidos
+                                realizados; de esta forma, tú te aseguras el Funko Pop y nosotros no pedimos un exceso
+                                de Funkos para tener en stock. Queremos ser justos no solo con vosotros, sino con la
+                                tienda: si se cancela pasada la fecha, tendremos Funkos en exceso, y creemos que 7 días
+                                es tiempo más que suficiente desde que se pide una figura para saber si lo vas a
+                                cancelar. Además, tampoco queremos que se juegue con nuestra tienda en ese sentido.
+                            </p>
+                            <h5>Sobre el origen de los productos</h5>
+                            <p>
+                                ¿SON ORIGINALES?
+                                Por supuesto que sí. No hace falta decirlo y puede parecer “estúpido”, pero nos vemos
+                                obligados a aclarar este punto ante la reciente y creciente salida de copias. Algunas
+                                tiendas hacen uso de la venta de falsificaciones sin notificarlo, y desde
+                                Funkotienda.com queremos dejar claro que estamos totalmente en contra de esa práctica y
+                                que, evidentemente, todos nuestros productos son oficiales y comprados bajo el sello
+                                Funko.
+                                Somos conscientes de que el cliente que duda o no conoce este mundillo puede caer en las
+                                redes de comprar sin saber, y por ello queremos dejar constancia de que nuestra tienda
+                                vende única y exclusivamente Funko Pops adquiridos directamente en el distribuidor
+                                oficial de Funko Morelos.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade show active" id="orders-tab" role="tabpanel"
+                            aria-labelledby="dashboard-nav">
+                            <h4>LOGISTICA</h4>
+                            <ul>
+                                <li><strong>Realiza tus Compras</strong></li>
+                                <p>
+                                    100 % SEGURAS
+                                    Tarjeta de crédito o debito Visa o Mastercard
+                                </p>
+                                <li><strong>• ENVÍOS SEGUROS Y EN 24 HORAS</strong></li>
+                                <p>
+                                    Gracias a Correos Express y Correos certificado, con extra de protección.
+                                    El costo del Envio depende de tu localizacion y del total de tu compra.
+                                </p>
+                                <li><strong>Actualizacion</strong></li>
+                                <p>
+                                    Nuestro stock y nuestros productos se actualizan practicamente diario.
+                                    Sientete con la confianza de comprar nuestros productos que si estan en las paginas
+                                    es porque estan en stock.
+                                </p>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="payment-tab" role="tabpanel" aria-labelledby="payment-nav">
+                            <h4>Metodo de Pago</h4>
+                            <p>
+                                Contamos con la plataforma de pago Stripe. <br>
+                                Con esto nos aseguramos que tus pagos puedan ser con cualquier tarjeta de debito o
+                                credito. <br>
+                                Asi mismo Stripe nos proporciona la seguridad de que toda tu información esta protegida
+                                hasta el momento del envio. Nosotros no recibimos tu dinero hasta que enviamos tu
+                                proudcto. <br>
+                                La confianza es primordial por eso ocupamos Stripe porque tu Privacidad es importante.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="address-tab" role="tabpanel" aria-labelledby="address-nav">
+                            <h4>Cookies.</h4>
+                            <p>
+                                Una cookie es un fichero que se descarga en tu ordenador al acceder a determinadas
+                                páginas web. Las cookies permiten, entre otras cosas, que una página web almacene y
+                                recupere información sobre los hábitos de navegación de un usuario o de su equipo y,
+                                dependiendo de la información que contengan y de la forma en que utilice su equipo,
+                                pueden utilizarse para reconocer al usuario. El navegador del usuario memoriza cookies
+                                en el disco duro solamente durante la sesión actual ocupando un espacio de memoria
+                                mínimo y no perjudicando al ordenador. Las cookies no contienen ninguna clase de
+                                información personal específica, y la mayoría de ellas se borran del disco duro al
+                                finalizar la sesión de navegador (las denominadas cookies de sesión).
+                                La mayoría de los navegadores aceptan como estándar a las cookies y, con independencia
+                                de las mismas, permiten o impiden en los ajustes de seguridad las cookies temporales o
+                                memorizadas.
+                                <br>
+                                Sin tu expreso consentimiento —mediante la activación de las cookies en tu navegador— no
+                                enlazará en las cookies los datos memorizados con tus datos personales proporcionados en
+                                el momento del registro o la compra..
+                                ¿Qué tipos de cookies utiliza esta página web?
+                                <br>
+                                <strong>Cookies técnicas:</strong> son aquellas que permiten al usuario la navegación a
+                                través de una
+                                página web, plataforma o aplicación y la utilización de las diferentes opciones o
+                                servicios que en ella existan como, por ejemplo, controlar el tráfico y la comunicación
+                                de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los
+                                elementos que integran un pedido, realizar el proceso de compra de un pedido, realizar
+                                la solicitud de inscripción o participación en un evento, utilizar elementos de
+                                seguridad durante la navegación, almacenar contenidos para la difusión de vídeos o
+                                sonido o compartir contenidos a través de redes sociales.
+                                <br>
+                                <strong>Cookies de personalización:</strong> son aquellas que permiten al usuario
+                                acceder al servicio
+                                con algunas características de carácter general predefinidas en función de una serie de
+                                criterios en el terminal del usuario, como por ejemplo el idioma, el tipo de navegador a
+                                través del cual accede al servicio, la configuración regional desde donde accede al
+                                servicio, etc.
+                                <br>
+                                <strong>Cookies de análisis:</strong> son aquellas que, bien tratadas por nosotros o por
+                                terceros, nos
+                                permiten cuantificar el número de usuarios y así realizar la medición y análisis
+                                estadístico de la utilización que hacen los usuarios del servicio ofertado. Para ello se
+                                analiza tu navegación en nuestra página web con el fin de mejorar la oferta de productos
+                                o servicios que te ofrecemos.
+                                <br>
+                                <strong>Cookies publicitarias:</strong> son aquellas que, bien tratadas por nosotros o
+                                por terceros,
+                                nos permiten gestionar de la forma más eficaz posible la oferta de los espacios
+                                publicitarios que hay en la página web, adecuando el contenido del anuncio al contenido
+                                del servicio solicitado o al uso que realices de nuestra página web. Para ello podemos
+                                analizar tus hábitos de navegación en Internet y podemos mostrarte publicidad
+                                relacionada con tu perfil de navegación.
+                                <br>
+                                <strong>Cookies de publicidad comportamental:</strong> son aquellas que permiten la
+                                gestión, de la
+                                forma más eficaz posible, de los espacios publicitarios que, en su caso, el editor haya
+                                incluido en una página web, aplicación o plataforma desde la que presta el servicio
+                                solicitado. Estas cookies almacenan información del comportamiento de los usuarios
+                                obtenida a través de la observación continuada de sus hábitos de navegación, lo que
+                                permite desarrollar un perfil específico para mostrar publicidad en función del mismo.
+                                <br>
+                                <strong>Cookies de terceros:</strong> Kanji.com puede utilizar servicios de terceros
+                                que, por cuenta de
+                                Funkotienda.com, recopilarán información con fines estadísticos, de uso del site por
+                                parte del usuario y para la prestación de otros servicios relacionados con la actividad
+                                del website y otros servicios de Internet.
+                                En particular, este sitio Web utiliza Google Analytics, un servicio analítico de web
+                                prestado por Google, Inc. con domicilio en los Cuernavaca Morelos y con sede central.
+                                Para la prestación de estos servicios, estos utilizan cookies que recopilan la
+                                información, incluida la dirección IP del usuario, que será transmitida, tratada y
+                                almacenada por Google en los términos fijados en la Web Google.com, incluyendo la
+                                posible transmisión de dicha información a terceros por razones de exigencia legal o
+                                cuando dichos terceros procesen la información por cuenta de Google.
+
+                                El usuario acepta expresamente, por la utilización de este site, el tratamiento de la
+                                información recabada en la forma y con los fines anteriormente mencionados. Asimismo,
+                                reconoce conocer la posibilidad de rechazar el tratamiento de tales datos o información
+                                rechazando el uso de cookies mediante la selección de la configuración apropiada a tal
+                                fin en su navegador, si bien esta opción de bloqueo de cookies en su navegador puede no
+                                permitirle el uso pleno de todas las funcionalidades del website.
+                                Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la
+                                configuración de las opciones del navegador instalado en tu ordenador:
+                                Chrome
+                                Explorer
+                                Firefox
+                                Safari
+                                Si tienes dudas sobre esta política de cookies, puede contactar con
+                                kanjiadmin@diegosanva.tech
+
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="account-tab" role="tabpanel" aria-labelledby="account-nav">
+                            <h4>Terminos y Condiciones</h4>
+                            <ol>
+                                <li><strong>Sistema de ventas y cancelaciones</strong></li>
+                                <p>
+                                    Para realizar una compra de cualquiera de nuestros productos, el cliente puede
+                                    elegir entre diversas formas de pago, bien sea Paypal o Tarjeta de Crédito o Débito,
+                                    además de que damos por hecho que el cliente es consciente de nuestra forma de
+                                    trabajar como bien explicamos en el siguiente enlace Pulse aquí.
+                                    La tienda se guarda el derecho a cancelar cualquier pedido si dicho pedido se ha
+                                    realizado conteniendo uno o varios productos que tengan por un error humano con un
+                                    precio inferior del real, o bien si la tienda ante cualquier problema ocasionado con
+                                    el pedido sufre amenazas o extorsiones.
+                                </p>
+                                <li><strong>Precios e impuestos</strong></li>
+                                <p>
+                                    Los precios de los productos expuestos en la página web de www.kanji.com incluyen
+                                    los impuestos correspondientes (21 % de IVA), pues Kanji actualmente (y con carácter
+                                    temporal) solo vende al territorio nacional.
+                                    A excepción Estados Unidos que los precios no conllevan ese 21% de IVA ni se refleja
+                                    en la factura, pero en cambio el precio es más caro para esos territorios, ya que la
+                                    tienda al pertenecer a un sistema de recargo de equivalencia y se ve en la
+                                    obligación de subir el precio a los productos el mismo valor que el IVA un 21 %.
+                                    Al precio reflejado en nuestra página web se le debe aplicar el coste de envío
+                                    dentro de la modalidad que el cliente seleccione.
+                                </p>
+                                <li><strong>Formas de pago admitidas</strong></li>
+                                <p>
+                                    Tarjeta de Crédito o Débito: el cliente podrá utilizar cualquier tipo de tarjeta
+                                    bancaria ya sea visa o mastercard, toda transacción es segura bajo el sistema de
+                                    redsys y totalmente independiente a nuestra tienda, es decir, una vez solicita su
+                                    pedido el pago se realizará en la plataforma de pago de nuestro banco y volverá al
+                                    finalizar a nuestra web.
+                                    En determinados casos, y para prevenir posibles fraudes, www.Kanji.com se reserva la
+                                    posibilidad de solicitar al cliente una forma de pago concreta (en el caso de que no
+                                    se acredite fehacientemente la identidad del comprador o así lo estimemos oportuno.
+                                </p>
+                                <li><strong>Gastos y el envio.</strong></li>
+                                <p>
+                                    Kanji envía todos sus pedidos utilizando la plataforma del grupo Correos, para
+                                    las recogidas en sucursal, se usará Correos Certificado siendo un tiempo de entrega
+                                    de 2 a 4 días laborables, para los envíos a domicilio dentro de la península así
+                                    como Portugal, el envío se realizará por Correos Express y FEDEX siendo 24h
+                                    normalmente pero dependiendo de la zona de envío, causas ajenas a la tienda o
+                                    temporadas con ventas mayores como por ejemplo campaña navideña o similares puede
+                                    demorarse a 48 h.
+                                    <br>
+                                    En el caso de que el pedido sea devuelto por el medio de envío seleccionado, ya sea
+                                    por problemas en la dirección, por no estar presente en su domicilio, por no
+                                    recogerlo en Correos, etc.., el coste de un nuevo envío correrá por cuenta del
+                                    cliente, que deberá abonar el coste por adelantado.
+                                    MUY IMPORTANTE: Todos nuestros envíos salen fotografiados y en condiciones óptimas
+                                    de nuestros almacenes; por tanto, si el cliente recoge un paquete golpeado, no
+                                    podremos ser responsables sobre las condiciones que pueda tener el Funko Pop y no
+                                    podremos realizar ni devolución ni similares.
+                                    <br>
+                                    <strong>¿Cómo actuar en caso de recibir un paquete dañado, golpeado, etc.?</strong>
+                                    <br>
+                                    El cliente deberá
+                                    rechazar la recogida y deberá indicarle al repartidor el motivo de dicho rechazo (si
+                                    la caja viene fuertemente golpeada o dañada, por ejemplo, lo que puede afectar a la
+                                    figura que contiene). Tras esto, tendrá que enviarnos un e-mail para remitir la
+                                    correspondiente reclamación a la empresa de transporte y que, de esta forma, el
+                                    seguro cubra el problema; en estos casos, procederíamos a una nueva entrega.
+                                    Para concluir con este punto, informarle que si usted está realizando la compra de
+                                    productos con stock inmediato, disponibilidad 2 a 4 días así como reservas, el
+                                    pedido sera enviado cuando sea completado y estén todos los productos disponibles en
+                                    tienda para su envío, este punto debéis tenerlo muy claro ya que la tienda por
+                                    razones de logística y tarifas con mensajerías no puede ni debe hacer varios envíos
+                                    de un mismo pedido (salvo que la tienda lo considere oportuno o necesario,
+                                    generalmente para pedidos grandes con bastante volumen).
+                                </p>
+                                <li><strong>Derechos de compra y devoluciones</strong></li>
+                                <p>
+                                    El cliente dispondrá de un plazo de 7 días desde la recepción del pedido para
+                                    comunicar a la tienda los motivos por los que desea realizar la devolución. El
+                                    reintegro de los Funko Pops adquiridos se realizará por el mismo método de pago que
+                                    se realizó en la compra. A continuación, indicamos algunas cosas importantes que el
+                                    cliente debe saber antes de realizar una devolución.
+                                    <br>
+                                    <strong>¿Qué cuestiones se deben tener en cuenta en una devolución?</strong>
+                                    <br>
+                                    Si en lugar de un reintegro desea un cambio, deberá hablarlo con el responsable de
+                                    la tienda.
+                                    Si se realiza una devolución, se tendrán en cuenta que en la devolución del pedido
+                                    se restará la parte correspondiente al envío.
+                                    Cuando la tienda da el visto bueno a la devolución, tiene que considerar que el
+                                    producto debe llegar en las mismas condiciones en las que se ha recibido; de lo
+                                    contrario, si la tienda ve desperfectos, golpes o similares, se guarda el derecho a
+                                    no realizar la devolución, y entregará nuevamente al cliente su compra devuelta.
+                                    El envío de una devolución corre a cargo del cliente, así como la responsabilidad de
+                                    que el embalaje y todo lo que representa un envío esté correctamente.
+                                    Si su paquete contiene golpes severos en la caja producidos por el transporte y
+                                    usted está aceptando dicha caja, está aceptándolo con los posibles daños internos
+                                    que se pueden deducir del estado externo de la caja, una vez aceptado el paquete
+                                    usted acepta dichos daños por lo que no habrá devolución posible.
+                                    Si un producto llega con pequeños desperfectos de pintura o similares, por problemas
+                                    de fabricación, o bien con una pequeña arruga un micro corte en caja los cuales la
+                                    tienda avisa de que las cajas están en perfectas condiciones 8/10 para ser vendidas
+                                    pues todo ello viene así de fábrica, si se desea el cambio o devolución, todo ello
+                                    correrá por cuenta del cliente.
+                                    <br>
+                                    <strong>¿Se puede devolver una reserva?</strong>
+                                    Pasados 5 días hábiles desde la realización y el pago de la reserva, no se permitirá
+                                    la cancelación de dicha reserva, pero sí se podrá cambiar por otro producto de
+                                    similar valor o, en su defecto, por un cupón descuento o tarjeta regalo por el valor
+                                    de lo adquirido.
+                                    Debe tener muy en cuenta que cuando se realiza una reserva, esta puede adelantarse
+                                    como demorarse, puede llegar a tardar incluso varios meses ya que por cuestiones de
+                                    logística estas pueden verse comprometidas y no llegar en la fecha establecida por
+                                    fábrica, por lo que debe estar muy seguro de estos factores.
+                                    <br>
+                                    <strong>¿Por qué no se devuelve el dinero pasados 5 días desde la reserva?</strong>
+                                    <br>
+                                    La tienda se guarda este derecho, pues cuando se realiza una reserva se adquiere ese
+                                    producto expresamente para el cliente.
+                                    Es de justicia para ambas partes que, si algo se reserva, sea un compromiso real,
+                                    tanto por parte de la tienda como por parte del cliente, pues aseguramos en el 99,99
+                                    % de los casos la llegada de dicha o dichas reservas.
+                                    Para más información sobre las reservas, lee el apartado Antes de comprar
+                                    ¿Qué sucede con los productos de disponibilidad 2 a 4 días?
+                                    Los productos con disponibilidad de 2 a 4 días generalmente son productos que se
+                                    piden a distribuidor oficial o fábrica, por tanto, la devolución de estos productos
+                                    únicamente será posible mediante tarjeta regalo ya que son pedidos exclusivamente
+                                    para ti como comprador.
+                                    Si realizas la compra de un producto de 2 a 4 días y utilizas el método de pago
+                                    transferencia, no podemos tramitar ni la solicitud del producto a distribuidor o
+                                    fábrica hasta que no dispongamos del recibo de la transferencia o de la
+                                    transferencia misma, por lo que si demoras varios días es posible, que cuando
+                                    vayamos a solicitarlo este se encuentre fuera de stock.
+
+                                </p>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- My Account End -->
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>Morelos, Mexico</p>
+                            <p><i class="fa fa-envelope"></i>kanjiadmin@diegosanva.tech</p>
+                            <p><i class="fa fa-phone"></i>777 130 6246</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Redes Sociales</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Informacion</h2>
+                        <ul>
+                            <li><a href="#">Acerca de Nosotros</a></li>
+                            <li><a href="#">Politica de Privacidad</a></li>
+                            <li><a href="#">Terminos & Condiciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Informacion de Compra</h2>
+                        <ul>
+                            <li><a href="#">Politica de Compra</a></li>
+                            <li><a href="#">Politica de Envios</a></li>
+                            <li><a href="#">Politica de Devolucion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row payment align-items-center">
+                <div class="col-md-6">
+                    <div class="payment-method">
+                        <h2>Aceptamos:</h2>
+                        <img src="/img/payment-method.png" alt="Payment Method" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="payment-security">
+                        <h2>Asegurado por:</h2>
+                        <img src="/img/godaddy.svg" alt="Payment Security" />
+                        <img src="/img/norton.svg" alt="Payment Security" />
+                        <img src="/img/ssl.svg" alt="Payment Security" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+        <div class="container">
+
+        </div>
+    </div>
+    <!-- Footer Bottom End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/easing/easing.min.js"></script>
+    <script src="/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

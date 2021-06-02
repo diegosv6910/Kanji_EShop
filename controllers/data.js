@@ -47,6 +47,10 @@ function onloadAccount(res){
     res.render('my-account')
 }
 
+function onloadPolicies(res){
+    res.render('politicas')
+}
+
 function onloadProductDetail(res){
     res.render('product-detail')
 }
@@ -77,5 +81,6 @@ module.exports = {
     onloadAccount,
     onloadProductDetail,
     onloadProductList,
-    onloadWishlist
+    onloadWishlist,
+    onloadPolicies
 }

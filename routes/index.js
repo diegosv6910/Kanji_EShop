@@ -16,7 +16,8 @@ const {
   onloadAccount,
   onloadProductDetail,
   onloadProductList,
-  onloadWishlist
+  onloadWishlist,
+  onloadPolicies
 } = require("../controllers/data")
 
 const{
@@ -51,6 +52,9 @@ router.get('/product-list', (req, res) =>{
 })
 router.get('/wishlist', (req, res) =>{
   onloadWishlist(res)
+})
+router.get('/politicas', (req, res) =>{
+  onloadPolicies(res)
 })
 
 router.use('/usuario', require('./usuarios'));
