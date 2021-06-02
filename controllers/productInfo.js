@@ -24,11 +24,12 @@ function loadProductByID(req, res) {
 }
 
 function loadProductsByName(req, res){
+    console.log("Llegando hasta aqui")
     var productItems = [
 
     ];
     var con = mysql.createConnection(sqlDetails)
-    con.query("SELECT * FROM `" + process.env.BDNAME + "`.`productos` where nombreProducto like  '%"+req.body.nameToSearch+"%'", function (err, result, fields) {
+    con.query("SELECT * FROM `" + process.env.BDNAME + "`.`productos` where nombreProducto like  '%"+req.params.nameToSearch+"%'", function (err, result, fields) {
         if (err) throw err
         productItems.push(result)  
         res.render('product-list', { arrayData: productItems })
@@ -38,4 +39,5 @@ function loadProductsByName(req, res){
 
 module.exports = {
     loadProductByID,
+    loadProductsByName,
 }

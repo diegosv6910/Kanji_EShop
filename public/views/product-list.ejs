@@ -141,8 +141,8 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="product-search">
-                                            <input type="email" value="Buscar">
-                                            <button><i class="fa fa-search"></i></button>
+                                            <input type="text" id="myText" value="Search">
+                                            <button type="button" id="search-button">Go</button>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -180,7 +180,7 @@
                                 </div>
                             </div>
                         </div>
-                        <% var index=0, length= arrayData[0].length %>
+                        <% var index=0, length=arrayData[0].length %>
                             <% for (index; index < length; index++){ %>
                                 <div class="col-md-4">
                                     <div class="product-item">
@@ -203,11 +203,14 @@
                                             <div class="product-action">
                                                 <a href="#"><i class="fa fa-cart-plus"></i></a>
                                                 <a href="#"><i class="fa fa-heart"></i></a>
-                                                <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>"><i class="fa fa-search"></i></a>
+                                                <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>"><i
+                                                        class="fa fa-search"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-price">
-                                            <h3><span>$</span><%= arrayData[0][index].precioProducto %></h3>
+                                            <h3><span>$</span>
+                                                <%= arrayData[0][index].precioProducto %>
+                                            </h3>
                                             <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
                                         </div>
                                     </div>
@@ -465,5 +468,16 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
 </body>
+
+<script type="text/javascript">
+    console.log("aqui")
+    var searchButton = document.getElementById("search-button");
+
+    searchButton.addEventListener("click", function () {
+        var x = document.getElementById("myText").value;
+        console.log(x)
+        window.location = `/v1/product-detail/filterName/${x}`
+    });
+</script>
 
 </html>
