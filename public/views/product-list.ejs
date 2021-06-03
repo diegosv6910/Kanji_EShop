@@ -195,7 +195,7 @@
                                                 <img src="/<%= arrayData[0][index].rutaImg %>" alt="Product Image">
                                             </a>
                                             <div class="product-action">
-                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="/v1/cart/<%= arrayData[0][index].idProducto %>"><i class="fa fa-cart-plus"></i></a>
                                                 <a href="#"><i class="fa fa-heart"></i></a>
                                                 <a href="/v1/product-detail/<%= arrayData[0][index].idProducto %>"><i
                                                         class="fa fa-search"></i></a>
@@ -205,7 +205,7 @@
                                             <h3><span>$</span>
                                                 <%= arrayData[0][index].precioProducto %>
                                             </h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Comprar</a>
+                                            <a class="btn" href="/v1/cart/<%= arrayData[0][index].idProducto %>"><i class="fa fa-shopping-cart"></i>Comprar</a>
                                         </div>
                                     </div>
                                 </div>

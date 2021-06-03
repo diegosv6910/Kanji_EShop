@@ -68,6 +68,19 @@ function onloadProductList(res){
     });
 }
 
+function loadCartById(req, res){
+    var productItems = [
+
+    ];
+    var con = mysql.createConnection(sqlDetails)
+    con.query("SELECT * FROM `" + process.env.BDNAME + "`.`productos` where idProducto = '"+ req.params.idProducto +"'", function (err, result, fields) {
+        if (err) throw err
+        productItems.push(result)  
+        con.end();
+        res.render('cart', { arrayData: productItems })
+    });
+}
+
 function onloadWishlist(res){
     res.render('wishlist')
 }
@@ -82,5 +95,6 @@ module.exports = {
     onloadProductDetail,
     onloadProductList,
     onloadWishlist,
-    onloadPolicies
+    onloadPolicies,
+    loadCartById
 }

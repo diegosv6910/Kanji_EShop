@@ -30,10 +30,6 @@ router.get('/', (req, res)=>{
   onloadBack(res)
 });
 
-router.get('/cart', (req, res)=>{
-  onloadBackCart(res)
-});
-
 router.get('/login', (req, res) =>{
   onloadLogin(res)
 })
@@ -62,6 +58,8 @@ router.use('/usuario', require('./usuarios'));
 router.use('/stripe', require('./stripe'));
 
 router.use('/product-detail', require('./productInfo'));
+
+router.use('/cart', require('./cart'))
 
 // exportamos nuestro nuevo route
 module.exports = router;

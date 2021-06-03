@@ -156,7 +156,7 @@
                                                 </thead>
                                                 <tbody class="align-middle">
                                                     <% var index=0, length=arrayData[0].length %>
-                                                        <% for (index; index < 2; index++){ %>
+                                                        <% for (index; index < 1; index++){ %>
                                                             <tr>
                                                                 <td>
                                                                     <div class="img">
@@ -194,10 +194,11 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="cart-page-inner">
-                                        <% var index=0, length=arrayData[0].length, sum=0 %>
-                                            <% for (index; index < 2; index++){ %>
+                                        <% var index=0, length=arrayData[0].length, sum=0, envio=0 %>
+                                            <% for (index; index < 1; index++){ %>
                                                 <% sum=sum + Number(arrayData[0][index].precioProducto)%>
                                                     <% } %>
+                                                        <% if (sum < 299) envio = 99 %> 
 
                                                         <div class="row">
                                                             <div class="col-md-12">
@@ -213,9 +214,11 @@
                                                                         <p>Subtotal<span>
                                                                                 <%= sum %>
                                                                             </span></p>
-                                                                        <p>Costo de Envio<span>$0</span></p>
+                                                                        <p>Costo de Envio<span>
+                                                                            <%= envio %>
+                                                                        </span></p>
                                                                         <h2>Total<span>
-                                                                                <%= sum %>
+                                                                                <%= sum + envio %>
                                                                             </span></h2>
                                                                     </div>
                                                                     <div class="cart-btn">
